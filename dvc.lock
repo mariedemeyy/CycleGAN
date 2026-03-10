@@ -1,0 +1,45 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python train.py --dataroot ./datasets/xray2drr --name xray2drr --model 
+      cycle_gan --display_freq -1
+    deps:
+    - path: datasets/xray2drr
+      hash: md5
+      md5: d1a4c30ae8d9d154591aab4265bd73e3.dir
+      size: 800340863
+      nfiles: 300
+    - path: train.py
+      hash: md5
+      md5: 4b9d4cf415ed6f104a2f596a12198386
+      size: 4777
+    outs:
+    - path: checkpoints/xray2drr
+      hash: md5
+      md5: ee473381e93def2e73ff6037fb2ec215.dir
+      size: 4774784091
+      nfiles: 1768
+  test:
+    cmd: python test.py --dataroot ./datasets/xray2drr --name xray2drr --model 
+      cycle_gan --phase test --direction AtoB --no_dropout
+    deps:
+    - path: checkpoints/xray2drr
+      hash: md5
+      md5: ee473381e93def2e73ff6037fb2ec215.dir
+      size: 4774784091
+      nfiles: 1768
+    - path: datasets/xray2drr
+      hash: md5
+      md5: d1a4c30ae8d9d154591aab4265bd73e3.dir
+      size: 800340863
+      nfiles: 300
+    - path: test.py
+      hash: md5
+      md5: 12124cc97175abf123f2711dfd30f530
+      size: 4258
+    outs:
+    - path: results/xray2drr
+      hash: md5
+      md5: 3ec1d81163afdc573aa98ab3689a4321.dir
+      size: 22249476
+      nfiles: 301

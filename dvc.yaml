@@ -1,7 +1,7 @@
 stages:
   train:
     cmd: python train.py --dataroot ./datasets/xray2drr --name xray2drr --model 
-      cycle_gan --display_freq -1 --force
+      cycle_gan --display_freq -1
     deps:
     - datasets/xray2drr
     - train.py

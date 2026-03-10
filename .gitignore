@@ -1,7 +1,7 @@
 .DS_Store
 debug*
-checkpoints/
-results/
+checkpoints/xray2drr
+results/xray2drr
 build/
 dist/
 *.png
@@ -43,3 +43,4 @@ test/data/legacy_serialized.pt
 
 #Ignore Wandb
 wandb/
+.venv
