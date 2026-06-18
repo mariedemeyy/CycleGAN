@@ -1,7 +1,5 @@
 .DS_Store
 debug*
-checkpoints/xray2drr
-results/xray2drr
 build/
 dist/
 *.png
