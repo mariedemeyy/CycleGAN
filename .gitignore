@@ -38,7 +38,9 @@ test/.coverage
 test/data/legacy_serialized.pt
 *~
 .idea
-
+datasets/
+checkpoints/
+results/
 #Ignore Wandb
 wandb/
 .venv
